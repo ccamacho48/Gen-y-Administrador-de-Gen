@@ -8,6 +8,7 @@
 
 
 #include "Gen.h"
+#include <iostream> //borrar linea
 
 Gen::Gen(unsigned int maximoDecargaGenetica, unsigned int cargaGenetica){
 	verificar(maximoDecargaGenetica, cargaGenetica);
@@ -38,8 +39,11 @@ unsigned int Gen::getMaximoDeCargaGenetica()  {
 }
 
 void Gen::verificar(unsigned int maximoDeCargaGenetica, unsigned int cargaGenetica ){
-	if(maximoDeCargaGenetica < 0)
-		throw "maximoDeCargaGenetica debe ser un entero positivo";
-	if( cargaGenetica < 0 || cargaGenetica > maximoDeCargaGenetica)
+	//std::cout << "maximo parametro: " << maximoDeCargaGenetica << " maximo atributo: " << this->maximoDeCargaGenetica << std::endl;
+	if(maximoDeCargaGenetica < 0){
+		throw "maximoDeCargaGenetica debe ser un entero positivo";}
+
+	if( cargaGenetica < 0 || cargaGenetica > maximoDeCargaGenetica){
 		throw "cargaGenetica debe ser un entero mayor o igual que cero y menor o igual que maximoDeCArgaGenetica";
+	}
 }
